@@ -17,6 +17,7 @@ public class SnmpclientSample {
     static int defaultPort = 4161;
     static String defaultIP = "192.168.0.43";
     static String defaultOID = ".1.3.6.1.4.1.4976.13.2.1";
+    static String defaultOID_1 = ".1.3.6.1.4.1.4976.13.1.0";
 
 
     static TransportMapping transport;
@@ -59,7 +60,7 @@ public class SnmpclientSample {
     static void testGet(String oid) throws java.io.IOException {
         //1. Make Protocol Data Unit
         PDU pdu = new PDU();
-        pdu.add(new VariableBinding(new OID(defaultOID)));
+        pdu.add(new VariableBinding(new OID(defaultOID_1)));
         pdu.setType(PDU.GET);
 
         OID custom = new OID();
@@ -95,7 +96,7 @@ public class SnmpclientSample {
         // Holder holder = getTable(1,2,".1.3.6.1.4.1.4976.13.2.1",new int[]{1,2,3,4,5});
         // System.out.println(holder);
         //querySingleSNMPTableByOID(".1.3.6.1.4.1.4976.13.2");
-        test2();
+       test2();
        // test3();
 
     }
